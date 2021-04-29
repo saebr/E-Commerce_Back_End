@@ -44,9 +44,16 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-//NEED TO DO THIS
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+  Category.update(req.body, {
+    where: {
+      id: req.params.id
+    },
+  })
+  .then((category) => {
+    return res.status(200).json(category)
+  })
   
 });
 
