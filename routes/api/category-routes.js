@@ -44,9 +44,10 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+//NEED TO DO THIS
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
+  
 });
 
 router.delete('/:id', async (req, res) => {
@@ -63,7 +64,7 @@ router.delete('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json(categoryData);
+    res.status(200).json(category,Data);
   } catch (err) {
     res.status(500).json(err);
   }
